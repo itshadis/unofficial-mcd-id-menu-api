@@ -17,7 +17,7 @@ const createOrder = (req, res) => {
       });
     }
 
-    const prices = menu.map(data => data.price);
+    const prices = menu.map(data => data.price * data.qty);
     const totalPrice = prices.reduce((a, b)=> a +b);
 
     db.order.push({
